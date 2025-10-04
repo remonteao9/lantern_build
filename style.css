@@ -1,0 +1,47 @@
+/* ページ全体：2列レイアウト */
+.page {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+/* 左カラム（Unity Canvas のエリア） */
+.left-column {
+    flex: 2;
+    padding: 20px;
+    background: #fafafa;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+}
+
+/* Canvas を包むラッパー（中央寄せ＋上配置） */
+.canvas-wrapper {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    /* 上からの余白（調整可） */
+}
+
+/* ✅ Unity Canvas本体（960×540固定） */
+#unity-canvas {
+    width: 960px;
+    /* 横幅を固定 */
+    height: 540px;
+    /* 高さを固定（16:9） */
+    background: #000;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+
+/* 右カラム（おすすめ動画など） */
+.right-column {
+    flex: 1;
+    padding: 20px;
+    background: #fff;
+    box-sizing: border-box;
+}
