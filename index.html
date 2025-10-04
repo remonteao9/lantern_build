@@ -12,13 +12,17 @@
       <div class="left-column">
         <div class="canvas-wrapper">
           <canvas id="unity-canvas" tabindex="-1" background: #231F20"></canvas>
+          <h1 class="game-title", id="game-title">タイトル</h1>
+          <p class="game-summary", id="game-summary">
+            概要<br>
+            概要
+          </p>
+            <div class="scroll-wrapper">
+              <div class="scroll-inner" id="scrollList"></div>
+            </div>
         </div>
       </div>
-      <div class="right-column">
-        <h2>PPPPPPPPPPPPPPPPP</h2>
-        <div class="recommend">おすすめ①</div>
-        <div class="recommend">おすすめ②</div>
-        <div class="recommend">おすすめ③</div>
+      <div class="right-column", id="rightColumn">
       </div>
     </div>
     <script src="Build/kagogaku.loader.js"></script>
@@ -48,11 +52,14 @@
         productVersion: "1.0",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((instance) => {
+        window.unityInstance = instance;
+
+        unityInstance.SendMessage("WebBridge", "OnReady");
       });
 
       
     </script>
-
-
+    <script src="./script.js"></script>
   </body>
 </html>
